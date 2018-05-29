@@ -1,5 +1,5 @@
 #Global Vars
-aws_cluster_name = "K8s-03"
+aws_cluster_name = "k8s-03"
 
 #VPC Vars
 aws_vpc_cidr_block = "10.250.192.0/18"

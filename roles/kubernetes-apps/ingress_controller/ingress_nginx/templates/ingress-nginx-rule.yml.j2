@@ -4,7 +4,7 @@ metadata:
   name: nginx-ingress
 spec:
   rules:
-  - host: {{ hostvars['k8s-cluster:vars'].apiserver_loadbalancer_domain_name }}
+  - host: {{ hostvars['k8s-cluster'].apiserver_loadbalancer_domain_name }}
     http:
       paths:
       - backend:
