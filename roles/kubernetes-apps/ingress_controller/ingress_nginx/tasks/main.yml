@@ -20,11 +20,11 @@
     - { name: ingress-nginx-clusterrole, file: ingress-nginx-clusterrole.yml, type: clusterrole }
     - { name: ingress-nginx-clusterrolebinding, file: ingress-nginx-clusterrolebinding.yml, type: clusterrolebinding }
     - { name: ingress-nginx-cm, file: ingress-nginx-cm.yml, type: cm }
-    - { name: ingress-nginx-tcp-servicecs-cm, file: ingress-nginx-tcp-servicecs-cm.yml, type: cm }
-    - { name: ingress-nginx-udp-servicecs-cm, file: ingress-nginx-udp-servicecs-cm.yml, type: cm }
     - { name: ingress-nginx-default-backend-svc, file: ingress-nginx-default-backend-svc.yml, type: svc }
-    - { name: ingress-nginx-default-backend-rs, file: ingress-nginx-default-backend-rs.yml, type: rs }
-    - { name: ingress-nginx-controller-ds, file: ingress-nginx-controller-ds.yml, type: ds }
+    - { name: ingress-nginx-default-backend, file: ingress-nginx-default-backend.yml, type: deployment }
+    - { name: ingress-nginx-controller, file: ingress-nginx-controller.yml, type: deployment }
+    - { name: ingress-nginx-rule, file: ingress-nginx-rule.yml, type: ingress }
+    - { name: ingress-nginx-controller-svc, file: ingress-nginx-controller-svc.yml, type: svc }
   register: ingress_nginx_manifests
   when:
     - inventory_hostname == groups['kube-master'][0]

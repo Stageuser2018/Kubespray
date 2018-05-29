@@ -1,6 +1,6 @@
 ---
 apiVersion: apps/v1
-kind: ReplicaSet
+kind: Deployment
 metadata:
   name: ingress-nginx-default-backend-v{{ ingress_nginx_default_backend_image_tag }}
   namespace: {{ ingress_nginx_namespace }}
@@ -34,4 +34,11 @@ spec:
             initialDelaySeconds: 30
             timeoutSeconds: 5
           ports:
-            - containerPort: 8080
+          - containerPort: 8080
+		  resources:
+            limits:
+              cpu: 10m
+              memory: 20Mi
+            requests:
+              cpu: 10m
+              memory: 20Mi
