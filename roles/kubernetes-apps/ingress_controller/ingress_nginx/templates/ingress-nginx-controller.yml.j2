@@ -26,7 +26,7 @@ spec:
         prometheus.io/scrape: 'true'
     spec:
       terminationGracePeriodSeconds: 60
-	  serviceAccountName: ingress-nginx
+      serviceAccountName: ingress-nginx
       containers:
         - name: nginx-ingress-controller
           image: {{ ingress_nginx_controller_image_repo }}:{{ ingress_nginx_controller_image_tag }}
@@ -60,4 +60,3 @@ spec:
           ports:
             - containerPort: 80
             - containerPort: 18080
-      
