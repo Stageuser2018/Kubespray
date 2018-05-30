@@ -1,5 +1,5 @@
 ---
-apiVersion: apps/v1
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: ingress-nginx-default-backend-v{{ ingress_nginx_default_backend_image_tag }}
@@ -9,10 +9,6 @@ metadata:
     version: v{{ ingress_nginx_default_backend_image_tag }}
 spec:
   replicas: 1
-  selector:
-    matchLabels:
-      k8s-app: ingress-nginx-default-backend
-      version: v{{ ingress_nginx_default_backend_image_tag }}
   template:
     metadata:
       labels:

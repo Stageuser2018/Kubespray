@@ -4,26 +4,12 @@ kind: Deployment
 metadata:
   name: nginx-ingress-controller
   namespace: {{ ingress_nginx_namespace }}
-  labels:
-    k8s-app: ingress-nginx
-    version: v{{ ingress_nginx_controller_image_tag }}
-  annotations:
-    prometheus.io/port: '10254'
-    prometheus.io/scrape: 'true'
 spec:
   replicas: 3
-  selector:
-    matchLabels:
-      k8s-app: ingress-nginx
-      version: v{{ ingress_nginx_controller_image_tag }}
   template:
     metadata:
       labels:
-        k8s-app: ingress-nginx
-        version: v{{ ingress_nginx_controller_image_tag }}
-      annotations:
-        prometheus.io/port: '10254'
-        prometheus.io/scrape: 'true'
+        app: nginx-ingress-lb
     spec:
       terminationGracePeriodSeconds: 60
       serviceAccountName: ingress-nginx
