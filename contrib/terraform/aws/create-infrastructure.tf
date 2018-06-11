@@ -109,6 +109,11 @@ resource "aws_elb_attachment" "attach_master_nodes" {
   instance = "${element(aws_instance.k8s-master.*.id,count.index)}"
 }
 
+resource "aws_elb_attachment" "attach_worker_nodes" {
+  count = "${var.aws_kube_worker_num}"
+  elb      = "${module.aws-elb.aws_elb_api_id}"
+  instance = "${element(aws_instance.k8s-worker.*.id,count.index)}"
+}
 
 resource "aws_instance" "k8s-etcd" {
     ami = "${data.aws_ami.distro.id}"

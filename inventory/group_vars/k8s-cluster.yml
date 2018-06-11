@@ -196,14 +196,13 @@ cephfs_provisioner_enabled: false
 # cephfs_provisioner_storage_class: cephfs
 
 # Nginx ingress controller deployment
-ingress_nginx_enabled: false
-#ingress_nginx_host_network: false
-#ingress_nginx_namespace: "ingress-nginx"
-#ingress_nginx_insecure_port: 80
-#ingress_nginx_secure_port: 443
-#ingress_nginx_configmap:
-#  map-hash-bucket-size: "128"
-#  ssl-protocols: "SSLv2"
+ingress_nginx_enabled: true
+ingress_nginx_host_network: false
+ingress_nginx_namespace: "ingress-nginx"
+ingress_nginx_insecure_port: 80
+ingress_nginx_secure_port: 443
+ingress_nginx_configmap:
+  enable-vts-status: 'true'
 #ingress_nginx_configmap_tcp_services:
 #  9000: "default/example-go:8080"
 #ingress_nginx_configmap_udp_services:
@@ -241,3 +240,5 @@ persistent_volumes_enabled: false
 ## See https://github.com/kubernetes-incubator/kubespray/issues/2141
 ## Set this variable to true to get rid of this issue
 volume_cross_zone_attachment: false
+
+kubelet_custom_flags: ["--authentication-token-webhook=true"]
