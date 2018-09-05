@@ -1,17 +1,17 @@
 [all]
-kubernetes-k8s-03-master0 ansible_host=10.250.196.58
-kubernetes-k8s-03-master1 ansible_host=10.250.215.179
-kubernetes-k8s-03-master2 ansible_host=10.250.199.200
-kubernetes-k8s-03-worker0 ansible_host=10.250.205.75
-kubernetes-k8s-03-worker1 ansible_host=10.250.217.196
-kubernetes-k8s-03-worker2 ansible_host=10.250.196.254
-kubernetes-k8s-03-etcd0 ansible_host=10.250.194.75
-kubernetes-k8s-03-etcd1 ansible_host=10.250.220.93
-kubernetes-k8s-03-etcd2 ansible_host=10.250.198.255
+kubernetes-k8s-03-master0 ansible_host=10.250.198.161
+kubernetes-k8s-03-master1 ansible_host=10.250.220.68
+kubernetes-k8s-03-master2 ansible_host=10.250.202.47
+kubernetes-k8s-03-worker0 ansible_host=10.250.197.61
+kubernetes-k8s-03-worker1 ansible_host=10.250.209.28
+kubernetes-k8s-03-worker2 ansible_host=10.250.195.27
+kubernetes-k8s-03-etcd0 ansible_host=10.250.206.165
+kubernetes-k8s-03-etcd1 ansible_host=10.250.213.222
+kubernetes-k8s-03-etcd2 ansible_host=10.250.197.250
 
 
-bastion ansible_host=34.247.86.15
-bastion ansible_host=52.212.134.94
+bastion ansible_host=52.209.253.213
+bastion ansible_host=34.241.39.41
 
 [kube-master]
 kubernetes-k8s-03-master0
@@ -37,4 +37,4 @@ kube-master
 
 
 [k8s-cluster:vars]
-apiserver_loadbalancer_domain_name="kubernetes-elb-k8s-03-1662663627.eu-west-1.elb.amazonaws.com"
+apiserver_loadbalancer_domain_name="kubernetes-elb-k8s-03-447659026.eu-west-1.elb.amazonaws.com"
